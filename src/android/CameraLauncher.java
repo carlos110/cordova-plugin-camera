@@ -525,7 +525,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             // Double-check the bitmap.
             if (bitmap == null) {
                 LOG.d(LOG_TAG, "I either have a null image path or bitmap");
-                this.failPicture("Unable to create bitmap!");
+//                this.failPicture("Unable to create bitmap!");
+                this.failPicture("无法创建位图!");
                 return;
             }
 
@@ -567,7 +568,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 // Double-check the bitmap.
                 if (bitmap == null) {
                     LOG.d(LOG_TAG, "I either have a null image path or bitmap");
-                    this.failPicture("Unable to create bitmap!");
+//                    this.failPicture("Unable to create bitmap!");
+                    this.failPicture("无法创建bitmap!");
                     return;
                 }
 
@@ -786,12 +788,12 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
 
             }// If cancelled
             else if (resultCode == Activity.RESULT_CANCELED) {
-                this.failPicture("No Image Selected");
+//                this.failPicture("No Image Selected");
             }
 
             // If something else
             else {
-                this.failPicture("Did not complete!");
+//                this.failPicture("Did not complete!");
             }
         }
         // If CAMERA
@@ -809,18 +811,19 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    this.failPicture("Error capturing image.");
+//                    this.failPicture("Error capturing image.");
+                    this.failPicture("发生了错误");
                 }
             }
 
             // If cancelled
             else if (resultCode == Activity.RESULT_CANCELED) {
-                this.failPicture("No Image Selected");
+//                this.failPicture("No Image Selected");
             }
 
             // If something else
             else {
-                this.failPicture("Did not complete!");
+//                this.failPicture("Did not complete!");
             }
         }
         // If retrieving photo from library
@@ -834,9 +837,9 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                     }
                 });
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                this.failPicture("No Image Selected");
+//                this.failPicture("No Image Selected");
             } else {
-                this.failPicture("Selection did not complete!");
+//                this.failPicture("Selection did not complete!");
             }
         }
     }
@@ -1272,7 +1275,8 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 code = null;
             }
         } catch (Exception e) {
-            this.failPicture("Error compressing image.");
+//            this.failPicture("Error compressing image.");
+            this.failPicture("压缩图片出错");
         }
         jpeg_data = null;
     }
