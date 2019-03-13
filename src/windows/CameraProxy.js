@@ -186,7 +186,8 @@ function takePictureFromFileWP (successCallback, errorCallback, args) {
         if (eventArgs.kind === Windows.ApplicationModel.Activation.ActivationKind.pickFileContinuation) {
             var file = eventArgs.files[0];
             if (!file) {
-                errorCallback("User didn't choose a file.");
+                // errorCallback("User didn't choose a file.");
+                errorCallback("没有选择一个文件");
                 webUIApp.removeEventListener('activated', filePickerActivationHandler);
                 return;
             }
@@ -256,7 +257,8 @@ function takePictureFromFileWindows (successCallback, errorCallback, args) {
 
     fileOpenPicker.pickSingleFileAsync().done(function (file) {
         if (!file) {
-            errorCallback("User didn't choose a file.");
+            // errorCallback("User didn't choose a file.");
+            errorCallback("没有选择图片");
             return;
         }
         if (destinationType === Camera.DestinationType.FILE_URI || destinationType === Camera.DestinationType.NATIVE_URI) {
@@ -631,7 +633,8 @@ function takePictureFromCameraWP (successCallback, errorCallback, args) {
             this.setAttribute('clicked', '1');
         }
         destroyCameraPreview();
-        errorCallback('no image selected');
+        // errorCallback('no image selected');
+        // errorCallback('没有选择图片');
     }
 
     /**
