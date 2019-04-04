@@ -164,7 +164,7 @@ static NSString* toBase64(NSData* data) {
                      // Denied; show an alert
                      dispatch_async(dispatch_get_main_queue(), ^{
                          // UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"Access to the camera has been prohibited; please enable it in the Settings app to continue.", nil) preferredStyle:UIAlertControllerStyleAlert];
-                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"请现在设置中允许App使用相机.", nil) preferredStyle:UIAlertControllerStyleAlert];
+                         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"] message:NSLocalizedString(@"请先在设置中允许App使用相机.", nil) preferredStyle:UIAlertControllerStyleAlert];
                          [alertController addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"确定", nil) style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                              [weakSelf sendNoPermissionResult:command.callbackId];
                          }]];
